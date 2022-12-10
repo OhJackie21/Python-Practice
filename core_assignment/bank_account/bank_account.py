@@ -51,7 +51,7 @@ class User:
     
     def make_deposit(self, amount):
         self.amount = amount
-    	print(self.account.balance)
+        print(self.account.balance)
 
 
 

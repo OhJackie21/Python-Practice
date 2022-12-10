@@ -40,24 +40,37 @@ class BankAccount:
             print(f"Current Balance with {self.int_rate_conv}% interest rate: ${self.balance}")
             return self
 
+    @classmethod
+    def print_all_accounts(cls):
+        for account in cls.accounts:
+            account.display_account_info()
+
 
 class User:
     def __init__(self, name, email):
         self.name = name
         self.email = email
         self.account = BankAccount(int_rate = 0.02, balance = 0)
-    
+
     # other methods
-    
+
     def make_deposit(self, amount):
-        self.amount = amount
-        print(self.account.balance)
+        print(self.account.deposit(amount))
+        return self
+
+    def make_withdraw(self, amount):
+        print(self.account.deposit(amount))
+        return self
+
+    def display_user_balance(self):
+        print(f"Account Owner: {self.name}")
+        self.account.display_account_info()
+        return self
 
 
 
-
-user1 = BankAccount(0.01, 500)
-# user1.deposit(1500).deposit(25).deposit(25.25).withdraw(250).display_account_info().yield_interest()
+user1 = User("Jake", "jake@j.com")
+user1.make_deposit(100).make_deposit(1500).make_deposit(25).make_deposit(25.25).make_withdraw(250).display_user_balance()
 
 # user2 = BankAccount(0.05, 500)
 # user2.deposit(1050).deposit(25.99).withdraw(350).withdraw(369.24).withdraw(150.25).withdraw(14).yield_interest().display_account_info()
