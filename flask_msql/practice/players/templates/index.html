@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Monoton&family=Quicksand:wght@300&family=Train+One&display=swap" rel="stylesheet">
+    <title>Player Info</title>
+</head>
+<body>
+    <header>All Players</header>
+    <div class="container2">
+    <table cellspacing="0">
+        <thead>
+            <tr class="thead">
+                <th class="idnum">ID#</th>
+                <th class="tablewidht">Full Name</th>
+                <th class="tablewidht">User Name</th>
+                <th class="tablewidht">Email</th>
+                <th class="tablewidht">Created at</th>
+                <th class="tablewidht">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for players in players %}
+            <tr>
+                <td class="idnum">{{ players.id }}</td>
+                <td class="tablewidht">{{ players.first_name }} {{ players.last_name }}</td>
+                <td class="tablewidht">{{ players.user_name }}</td>
+                <td class="tablewidht">{{ players.email }}</td>
+                <td class="tablewidht">{{ players.created_at }}</td>
+                <td class="tablewidht2">
+                    <p class="actions"><a href="/show/{{players.id}}">Show</a></p> | 
+                    <p class="actions"><a href="/edit/{{players.id}}">Edit</a></p> | 
+                    <p class="actions"><a href="/delete/{{players.id}}">Delete</a></p>
+
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/addplayer"><button class="adduser">Add Player</button></a>
+    </div>
+
+</body>
+</html>

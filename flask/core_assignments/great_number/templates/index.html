@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Delius+Unicase&family=Neucha&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>WELCOME to the GREAT NUMBER GAME!!!</header>
+    <h2>I am thinking of a number between 1 and 100</h2>
+        <br>
+        {% if 'num_guess' in session: %}
+            {% if session['num_guess'] == session['randnum'] %}
+            <div class="correct">
+                <p>You are right!!</p>
+                <form action="/reset">
+                    <button name="reset" class="reset">Play Again</button>
+                </form>
+            </div>
+            {% elif session['num_guess'] < session['randnum'] %}
+            <div class="wrong">
+                <p>TOO LOW!!</p>
+                <p>Try again</p>
+            </div>
+            {% elif session['num_guess'] > session['randnum'] %}
+            <div class="wrong">    
+                <p>TOO HIGH!!</p>
+                <p>Try again!!</p>
+            </div>
+            {% endif %}
+        {% else %}
+        <div class="start"> 
+            <p>What Could it Be?</p>
+        </div>
+        {% endif %}
+   
+        <br><br>
+    <div class="tguess">
+        <form action="/guess" method="POST">
+            <label for="num_guess" class="guess">Let's take a guess!</label>
+                <br>
+            <input type="text" id="num_guess" name="num_guess">
+                <br>
+            <input type="submit" class="btn" value="GUESS">
+        </form>
+    </div>
+</body>
+</html>

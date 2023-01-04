@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Righteous', cursive;
+    color: white;
+    background-color: #CEC3C1;
+}
+
+.main h1{
+    color: #B2FFA9;
+}
+
+.bigcon{
+    margin: auto;
+    width: 450px;
+    height: 665px;
+    background-color: #3F2A2B;
+    margin-top: 30px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.main{
+    margin: auto;
+    width: 250px;
+    height: 450px;
+    background-color: #3F2A2B;
+    margin-top: 30px;
+    padding: 25px;
+    margin-right: 90px;
+}
+
+.comments,
+.location,
+.language,
+.name{
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.comments{
+    padding: 10px
+
+}
+
+.submit,
+.btn{
+    width: 80px;
+    height: 35px;
+    background-color: #FF4A1C;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px 5px 5px black;
+}
+
+h3{
+    text-decoration: underline;
+}
+
+.reqform{
+    text-decoration: underline;
+    
+}
+
+.tab{
+    padding-left: 50px;
+}
+.location,
+.language,
+.name{
+    width: 250px;
+    height: 30px;
+    text-align: center;
+}
+
+td{
+    width: 350px;
+}
+
+tr{
+    height: 75px;
+}

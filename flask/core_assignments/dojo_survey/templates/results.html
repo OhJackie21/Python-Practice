@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="bigcon">
+        <div class="main">
+            <h1>Dojo Survey</h1>
+            <br>
+            <h3>submitted info:</h3>
+            <br>
+            <table>
+                <tr>
+                    <td>Name:</td>
+                    <td>{{session['fname']}}</td>
+                </tr>
+                <tr>
+                    <td>Dojo Location:</td>
+                    <td>{{session['location']}}</td>
+                </tr>
+                <tr>
+                    <td>Favorite Language:</td>
+                    <td>{{session['language']}}</td>
+                </tr>
+                <tr>
+                    <td>Comments:</td>
+                    <td>{{session['comments']}}</td>
+                </tr>
+
+            </table>
+            
+            <form action="/back" method="POST">
+                <button class="btn">Back</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

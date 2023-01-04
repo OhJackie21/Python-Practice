@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <title>Dojo Survey</title>
+</head>
+<body>
+    <div class="bigcon">
+        <div class="main">
+            <h1>Dojo Survey</h1>
+            <form action="/results" method="POST">
+                <label for="name">Name:</label>
+                    <br>
+                <input type="text" class="name" name="fname">
+                    <br><br>
+                <label for="location">Dojo Location:</label>
+                    <br>
+                <select name="location" class="location">
+                    <option value=""> --Select a location--</option>
+                    <option value="Online">Online</option>
+                    <option value="Bellevue">Bellevue</option>
+                    <option value="Burbank">Burbank</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Seattle">Seattle</option>
+                </select>
+                    <br><br>
+                <label for="language">Favorite Language:</label>
+                    <br>
+                <select name="language" class="location">
+                    <option value=""> --Select a language--</option>
+                    <option value="C#">C#</option>
+                    <option value="css">CSS</option>
+                    <option value="HTML">HTML</option>
+                    <option value="Java">Java</option>
+                    <option value="Python">Python</option>
+                </select>
+                    <br><br>
+                <label for="comments">Comments:</label>
+                    <br>
+                <textarea name="comments" class="comments" cols="25" rows="10"></textarea>
+                    <br><br>
+                <input type="submit" value="Submit" class="submit">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>

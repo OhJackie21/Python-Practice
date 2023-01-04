@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: #577590;
+    text-align: center;
+    height: 75px;
+    font-size: 30px;
+    font-family: 'Delius Unicase', cursive;
+    font-weight: bold;
+    color: white;
+    padding-top: 25px;
+}
+
+h2{
+    font-family: 'Neucha', cursive;
+    text-align: center;
+    margin-top: 25px;
+}
+
+    
+.wrong{
+    height: 100px;
+    width: 500px;
+    background-color: #D78A76;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Delius Unicase', cursive;
+    padding-top: 50px;
+    font-weight: bold;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.reset{
+    width: 150px;
+    height: 25px;
+    border-radius: 20px;
+    background-color: #330036;
+    color: #F3CA40;
+    
+}
+
+.start{
+    height: 100px;
+    width: 500px;
+    margin: auto;
+    background-color: #8AF3FF;
+    color: #861657;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Delius Unicase', cursive;
+    padding-top: 50px;
+    font-weight: bold;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.correct{
+    height: 100px;
+    width: 500px;
+    background-color: #23CE6B;
+    margin: auto;
+    color: white;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Delius Unicase', cursive;
+    padding-top: 50px;
+    font-weight: bold;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+.tguess{
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    height: 150px;
+    background-color: #603140;
+    font-family: 'Neucha', cursive;
+    padding-top: 25px;
+    font-size: 25px;
+    border-radius: 120px;
+    box-shadow: 5px 5px 5px gray;
+}
+
+.guess{
+    color: #F3CA40;
+}
+
+#num_guess{
+    height: 25px;
+    width: 155px;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn{
+    margin-top: 15px;
+    height: 25px;
+    width: 100px;
+    border-radius: 15px;
+    font-family: 'Neucha', cursive;
+    font-size: 20px;
+}

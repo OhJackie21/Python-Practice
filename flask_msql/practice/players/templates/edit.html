@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&family=Monoton&family=Quicksand:wght@300&family=Train+One&display=swap" rel="stylesheet">
+    <title>Edit Player</title>
+</head>
+<body>
+    <header>Edit Player {{players.first_name}}</header>
+    <p class="btn"><a href="/">Home</a></p>
+    <div class="container">
+        <form action="/update" method="POST">
+            <input type="hidden" name="id" value={{players.id}}>
+            <label for="first_name">First Name:</label>
+                <br>
+                <input type="text" name="first_name" class="input" value="{{players.first_name}}">
+                <br><br>
+            <label for="last_name">Last Name:</label>
+                <br>
+                <input type="text" name="last_name" class="input" value="{{players.last_name}}">
+                <br><br>
+            <label for="user_name">User Name:</label>
+                <br>
+                <input type="text" name="user_name" class="input" value="{{players.user_name}}">
+                <br><br>
+            <label for="email">Email:</label class="input" >
+                <br>
+                <input type="text" name="email" class="input" value="{{players.email}}">
+                <br><br>
+            <div class="btmcont">
+                <input type="submit" value="UPDATE" class="submit">
+        </form>
+        <form action="/show/{{players.id}}">
+                <button class="show">Player Info</button>
+        </form>
+            </div>
+    
+    </div>
+    
+</body>
+</html>

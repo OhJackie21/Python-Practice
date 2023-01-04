@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Pacifico', cursive;
+}
+
+div{
+    margin: auto;
+    text-align: center;
+    width: auto;
+}
+
+.mid{
+    height: 50px;
+    
+
+
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    padding-top: 45px;
+    gap: 20px;
+
+}
+
+.top{
+    margin-top: 30px;
+    height: 70px;
+    padding-top: 38px;
+}
+
+h1{
+    color: #3C3C3C;
+    font-size: 50px;
+}
+
+.numct{
+    font-size: 50px;
+    color: #157F1F;
+}
+
+.addb,
+.resetb{
+    width: 150px;
+    border: 2px #087E8B solid;
+    background-color: #087E8B;
+    color: white;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-size: 20px;
+    height: 30px;
+    box-shadow: 3px 3px 3px black;
+}
+.resetb{
+    background-color: #FF5A5F;
+    border: 2px #FF5A5F solid;
+}
+

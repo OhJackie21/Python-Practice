@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" {{ url_for('static', filename='/css/style.css')}} ">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=KoHo:ital,wght@1,300&family=Train+One&display=swap" rel="stylesheet">
+    <title>Users</title>
+</head>
+<body>
+    <div class="header"> <h1>Users Info</h1></div>
+    <div class="container2">
+        <table class="table" cellspacing="0">
+            <thead>
+                <tr class="head">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                </tr>
+            </thead> 
+            <tbody>
+                {% for user in users%}
+                <tr>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                </tr>
+                {% endfor%}
+            </tbody>   
+        </table>
+        
+    </div>
+        <br><br>
+    <form action="/users/new" class="form">
+        <input type="submit" value="Add New User" class="add">
+    </form>
+</body>
+</html>

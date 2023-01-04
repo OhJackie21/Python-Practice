@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+.container{
+    width: 70%;
+    background-color: bisque;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.goldqty{
+    display: flex;
+    gap: 10px;
+}
+
+.gold{
+    width: 150px;
+    height: 20px;
+    padding-right: 5px;
+    border: 2px solid black;
+    text-align: right;
+}
+
+.action{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.farm,
+.cave,
+.house,
+.casino{
+    width: 200px;
+    height: 190px;
+    background-color: blueviolet;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+}
+
+.headactivity{
+    margin-top: 30px;
+}
+
+.activity{
+    overflow-y: auto;
+    height: 125px;
+    padding: 20px;
+    width: auto;
+    margin-top: 20px;
+    background-color: aqua;
+}

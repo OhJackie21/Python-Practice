@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Ninja Gold</title>
+</head>
+<body>
+    <div class="container">
+        <div class="goldqty">
+            <h3>Your Gold</h3>
+            <p class="gold">{{ gold_qty }}</p>
+        </div>
+        <div>
+            <form action="/reset" method="POST">
+                <input type="submit" value="RESET">
+            </form>
+        </div>
+        <div class="action">
+            <div class="farm">
+                <h1>FARM</h1>
+                <p>Earn 10-20 Golds</p>
+                    <br>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="property" value="farm">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="cave">
+                <h1>CAVE</h1>
+                <p>Earn 5-10 Golds</p>
+                    <br>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="property" value="cave">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="house">
+                <h1>HOUSE</h1>
+                <p>Earn 2-5 Golds</p>
+                    <br>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="property" value="house">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+            <div class="casino">
+                <h1>CASINO</h1>
+                <p>Earn/TAKE 0-50 Golds</p>
+                    <br>
+                <form action="/process_money" method="POST">
+                    <input type="hidden" name="property" value="casino">
+                    <input type="submit" value="Find Gold">
+                </form>
+            </div>
+        </div>
+        <div class="headactivity">
+            <h3>Activities:</h3>
+        </div>
+        <div class="activity">
+             <ul>
+                {% for activity in session %}
+                    {% for i in range(0, session['activity']|length) %}
+                    <li>{{session['activity']|last}}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
