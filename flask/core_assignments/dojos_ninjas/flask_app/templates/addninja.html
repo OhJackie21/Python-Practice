@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Permanent+Marker&family=Shojumaru&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>NINJA DOJOS</header>
+   <div class="container2">
+    <h1 class="addhead">Add Ninja</h1>
+        <br>
+    <table>
+        <form action="">
+            <tr>
+                <td><label for="dojo">Dojo:</label></td>
+                <td>
+                    <select name="dojo" id="">
+                        <option value="test">test</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="first_name">First Name:</label></td>
+                <td><input type="text" name="first_name" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="last_name">Last Name:</label></td>
+                <td><input type="text" name="last_name" id=""></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age:</label></td>
+                <td><input type="text" name="age" id=""></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="CREATE" class="create"></td>
+            </tr>
+        </form>
+    </table>
+   </div>
+   <div class="add">
+    <p><a href="/home">Home</a></p>
+</div>
+</body>
+</html>

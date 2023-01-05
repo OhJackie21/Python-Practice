@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #d5d5d4;
+}
+
+header{
+    margin: auto;
+    text-align: center;
+    height: 70px;
+    background-image: linear-gradient(to bottom right , #3C1518, #D58936);
+    font-family: 'Shojumaru', cursive;
+    color: white;
+    font-size: 40px;
+    padding-top: 20px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+} 
+
+.newdj,
+.alldj{
+    width: 250px;
+    
+    padding: 30px;
+    margin-top: 20px;
+   
+}
+
+.newdj{
+    background-color: #3C1518;
+    height: 200px;
+    font-family: 'Covered By Your Grace', cursive;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 5px 5px 5px black;
+}
+
+.alldj{
+    background-color: #A44200;
+    height: 400px;
+    border-radius: 50px;
+    color: aliceblue;
+    box-shadow: 5px 5px 5px black;
+}
+
+.add{
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.inptname{
+    width: 150px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 20px;
+    border: none;
+}
+
+.btncreate{
+    border: none;
+    width: 120px;
+    height: 25px;
+    margin-left: 75px;
+    border-radius: 30px;
+    border: none;
+    font-family: 'Covered By Your Grace', cursive;
+    
+}
+
+.djlist{
+    overflow: auto;
+    height: 325px;
+}
+
+.btncreate:hover{
+    background-color: #D58936;
+    box-shadow: 5px 5px 5px black;
+}
+
+.add{
+    border: 1px solid black;
+    width: 120px;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px;
+    font-size: 25px;
+    border-radius: 50px;
+    font-family: 'Covered By Your Grace', cursive;
+    background-color: #FFF94F;
+}
+
+.add:hover{
+    background-color: #D58936;
+    color: #FFF94F;
+    box-shadow: 5px 5px 5px black;
+}
+
+
+.add a{
+    text-decoration: none;
+}
+
+.add a:visited,
+.add a:active{
+    color: black;
+}
+
+.container2{
+    margin: auto;
+    max-width: max-content;
+    margin-top: 30px;
+    background-color: #3C1518;
+    padding: 20px;
+    color:#FFF94F;
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px black;
+}
+td{
+    padding: 15px;
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 30px;
+}
+
+select,
+input{
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+}
+
+select{
+    height: 40px;
+}
+.addhead{
+    color: white;
+}
+
+.create{
+    background-color:#D58936;
+    color: black;
+    font-family: 'Covered By Your Grace', cursive;
+}
+
+.create:hover{
+    background-color:#FFF94F;
+    box-shadow: 5px 5px 5px black;
+}
+
+.container3{
+    margin: auto;
+    max-width: max-content;
+    margin-top: 30px;
+    background-color: #D58936;
+    padding: 20px;
+    color:#FFF94F;
+    border-radius: 80px;
+    box-shadow: 5px 5px 5px black;
+}
