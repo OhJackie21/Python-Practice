@@ -14,10 +14,9 @@
         <div class="newdj">
             <h1>New Dojos</h1>
             <br>
-            <form action="">
-                <input type="hidden" name="" id="">
-                <label for="newdojo">New Name:</label>
-                <input type="text" name="newdojo" class="inptname">
+            <form action="/add_dojo" method="POST">
+                <label for="name">New Name:</label>
+                <input type="text" name="name" class="inptname">
                     <br><br><br>
                 <input type="Submit" value="Create Dojo" class="btncreate">
             </form>
@@ -26,32 +25,16 @@
             <h1>All Dojos</h1>
                 <br>
             <div class="djlist">
-                <p>1.test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>11.test testtesttesttest</p>
-                <p>12.test testtesttesttest</p>
-                <p>13.test testtesttesttest</p>
-                <p>14.test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
-                <p>test testtesttesttest</p>
+               <ul>
+                {% for djlist in dojos %}
+                    <li class="dojolist"><a href="/dojos/{{djlist.id}}">{{djlist.name}}</a></li>
+                {% endfor %}
+            </ul>
             </div>
         </div>
     </div>
     <div class="add">
-        <p><a href="/add_ninja">ADD Ninja</a></p>
+        <p><a href="/addninja">ADD Ninja</a></p>
     </div>
 </body>
 </html>

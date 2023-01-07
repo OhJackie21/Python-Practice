@@ -40,6 +40,6 @@ class Players:
 
     @classmethod
     def remove(cls, data):
-        query = "DELETE FROM players WHERE id = %(ids)s;"
+        query = "DELETE FROM players WHERE id = %(id)s;"
         result = connectToMySQL('players').query_db(query, data)
         return result

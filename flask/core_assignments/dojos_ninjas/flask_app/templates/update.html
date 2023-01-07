@@ -10,41 +10,47 @@
 <body>
     <header>NINJA DOJOS</header>
    <div class="container2">
-    <h1 class="addhead">Add Ninja</h1>
+    <h1 class="addhead">Edit Ninja</h1>
         <br>
     <table>
-        <form action="/create_ninja" method="POST">
+        <form action="/update_ninja" method="POST">
             <tr>
                 <td><label for="dojo">Dojo:</label></td>
                 <td>
                     <select name="dojo_id" id="">
-                        {% for dojos in dojos %}
-                        <option value="{{dojos.id}}">{{dojos.name}}</option>
+                       {% for dojos in dojos %}
+                       <option selected="{{dojos.id}}">{{dojos.name}}</option>
                         {% endfor %}
                     </select>
                 </td>
             </tr>
+                
             <tr>
                 <td><label for="first_name">First Name:</label></td>
-                <td><input type="text" name="first_name" id=""></td>
+                <td><input type="text" name="first_name" id="" value="{{ninja.first_name}}"></td>
             </tr>
             <tr>
                 <td><label for="last_name">Last Name:</label></td>
-                <td><input type="text" name="last_name" id=""></td>
+                <td><input type="text" name="last_name" id="" value="{{ninja.last_name}}"></td>
             </tr>
             <tr>
                 <td><label for="age">Age:</label></td>
-                <td><input type="number" name="age" id=""></td>
+                <td><input type="number" name="age" id="" value="{{ninja.age}}"></td>
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="CREATE" class="create"></td>
+                <td><input type="submit" value="UPDATE" class="create"></td>
             </tr>
+        
         </form>
     </table>
    </div>
-   <div class="add">
+    <div class="add">
     <p><a href="/home">Home</a></p>
-</div>
+    </div>
+    <div class="add">
+        <p><a href="/dojos/{{ninja.dojo_id}}">Back</a></p>
+       
+    </div>
 </body>
 </html>

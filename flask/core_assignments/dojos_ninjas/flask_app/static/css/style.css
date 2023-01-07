@@ -170,3 +170,23 @@ select{
     border-radius: 80px;
     box-shadow: 5px 5px 5px black;
 }
+
+.thead td{
+    text-decoration: underline;
+    color: #69140E;
+}
+
+a{
+    text-decoration: none;
+}
+
+.dojolist{
+    font-family: 'Covered By Your Grace', cursive;
+    font-size: 30px;
+}
+
+.dojolist a:active,
+.dojolist a:visited,
+.dojolist a:link{
+    color: #FFF94F;
+}

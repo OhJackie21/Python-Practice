@@ -9,20 +9,31 @@
     <title>Ninjas</title>
 </head>
 <body>
-    <header>dojoname NINJAS</header>
+    <header>{{dojos.name}} NINJAS</header>
    <div class="container3">
    <table>
     <thead>
         <th>
-            <td>First Name</td>
-            <td>Last Name</td>
-            <td>Age</td>
+            <tr class="thead">
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Age</td>
+                <td>Actions</td>
+            </tr>
         </th>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
+        {% for ninja in dojos.ninjas %}
+        <tr>            
+            <td>{{ ninja.first_name }}</td>
+            <td>{{ ninja.last_name }}</td>
+            <td>{{ ninja.age }}</td>
+            <td>
+                <a href="/edit_ninja/{{ninja.id}}">edit</a> | 
+                <a href="/delete/{{ninja.id}}">delete</a>
+            </td>
         </tr>
+        {% endfor %}
     </tbody>
    </table>
    </div>
