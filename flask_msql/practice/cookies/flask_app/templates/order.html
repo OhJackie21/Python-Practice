@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Kaushan+Script&family=Rubik+Puddles&family=Short+Stack&display=swap" rel="stylesheet">
+    <title>Order Cookies</title>
+</head>
+<body>
+    <div class="border"><h1 class="header1">Order Cookies</h1></div>
+    <p class="order"><a href="/">HOME</a></p>
+    
+    <div class="container2">
+    <form action="/add" method="POST">
+        <input type="hidden" name="id">
+        <label for="customer_name">Customer Name:</label>
+            {% with messages = get_flashed_messages(category_filter = ["customer_name"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <br>
+            <input type="text" name="customer_name"  value="{{session.get('customer_name', '')}}">
+            <br><br>
+        <label for="cookie_type">Cookie Type:</label>
+        {% with messages = get_flashed_messages(category_filter = ["cookie_type"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <br>
+            <input type="text" name="cookie_type" value="{{session.get('cookie_type', '')}}">
+            <br><br>
+        <label for="order_qty">Order Qty:</label>
+        {% with messages = get_flashed_messages(category_filter = ["order_qty"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <br>
+            <input type="number" name="order_qty" value="{{session.get('order_qty', '')}}">
+            <br><br><br>
+        <input type="submit" value="SUBMIT" class="submit">
+    </form>
+    </div>
+</body>
+</html>

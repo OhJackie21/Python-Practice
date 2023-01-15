@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #C3FB8D;
+    opacity: 1;
+    background: radial-gradient(circle, transparent 20%, #C3FB8D 20%, #C3FB8D 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #C3FB8D 20%, #C3FB8D 80%, transparent 80%, transparent) 17.5px 17.5px, linear-gradient(#80E8BD 1.4000000000000001px, transparent 1.4000000000000001px) 0 -0.7000000000000001px, linear-gradient(90deg, #80E8BD 1.4000000000000001px, #C3FB8D 1.4000000000000001px) -0.7000000000000001px 0;
+    background-size: 35px 35px, 35px 35px, 17.5px 17.5px, 17.5px 17.5px;
+}
+
+
+.container,
+.container2{
+    margin: auto;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 30px;
+
+}
+
+.container2{
+    font-family: 'Kaushan Script', cursive;
+    background-color: #757761;
+    padding: 20px;
+    font-size: 20px;
+    color: white;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow:  3px 3px 3px black;
+    
+}
+
+.container2 input{
+    width: 250px;
+    height: 30px;
+}
+
+.border{
+    height: 70px;
+    background-color: #80E8BD;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 3px 3px 3px black;
+    font-family: 'Rubik Puddles', cursive;
+}
+
+.header1{
+    font-size: 60px;
+    background: -webkit-linear-gradient(#757761, #C3FB8D, #51BBFE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px #202C59;
+}
+
+tr,
+td{
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+table tr:nth-child(even):hover{
+    background-color: #202C59;
+    color: whitesmoke;
+}
+
+table tr:nth-child(even){
+    background-color: #C9D0DB;
+}
+
+tr:hover{
+    background-color: #202C59;
+    color: whitesmoke;
+}
+
+tr:hover a{
+    color: white;
+}
+
+thead tr{
+    background-color: #757761;
+    color: white;
+    font-family: 'Kaushan Script', cursive;
+}
+
+thead tr:hover{
+    background-color: #757761;
+    color: white;
+}
+
+tbody{
+    font-family: 'Short Stack', cursive;
+}
+
+tr{
+    background-color: #C3FB8D;
+}
+
+
+a:link,
+a:visited,
+a:active{
+    text-decoration: none;
+}
+
+.order{
+    font-family: 'Handlee', cursive;
+    background-color:#80E8BD;
+    width: 175px;
+    float: left;
+    font-size: 25px;
+    margin-top: -45px;
+    margin-left: 10px;
+    padding: 5px;
+    
+}
+
+.order a:hover{
+    background-color: #70D9D3;
+    border-radius: 50px;
+    padding: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.submit:hover{
+    background-color: #51BBFE;
+    border: none;
+    box-shadow: 2px 2px 2px black;
+}
+
+.message{
+    background-color: red;
+    font-size: 15px;
+    text-align: center;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

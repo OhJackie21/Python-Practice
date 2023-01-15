@@ -192,3 +192,13 @@ a{
     padding: px;
 }
 
+.message{
+    color: white;
+    background-color: red;
+    border-radius: 50px;
+    width: 200px;
+    text-align: center;
+    margin: auto;
+    font-size: 15px;
+    box-shadow: 5px 5px 5px black;
+}

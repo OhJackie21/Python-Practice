@@ -1,4 +1,10 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask import flash
+import re
+
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+
+
 
 class Players:
     def __init__(self, data):
@@ -43,3 +49,23 @@ class Players:
         query = "DELETE FROM players WHERE id = %(id)s;"
         result = connectToMySQL('players').query_db(query, data)
         return result
+
+    @staticmethod
+    def validate_add(players):
+        is_valid = True 
+        if len(players['first_name']) <= 0:
+            flash("**First Name is required.**", 'first_name')
+            is_valid = False
+        if len(players['last_name']) <= 0:
+            flash("**Last Name is required.**", 'last_name')
+            is_valid = False
+        if len(players['user_name']) <= 0:
+            flash("**User Name is required.**", "user_name")
+            is_valid = False
+        if len(players['email']) <= 0:
+            flash("**Email is required.**", "email")
+        if len(players['email']) > 0 and not EMAIL_REGEX.match(players['email']):
+            flash("**Invalid email address!**", "email_invalid")
+            is_valid = False
+        return is_valid
+        

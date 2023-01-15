@@ -1,9 +1,7 @@
 from flask import render_template, redirect, session, request
-
 from flask_app.models.players import Players
-
-
 from flask_app import app
+
 
 
 @app.route('/')
@@ -14,6 +12,8 @@ def index():
 def player_info():
     players = Players.get_all()
     print(players)
+    # if "first_name" in i:
+    #     print("practice")
     return render_template('index.html', players=players)
 
 @app.route('/addplayer')
@@ -22,9 +22,11 @@ def click():
 
 @app.route('/add_user', methods=['POST'])
 def add_player():
+    if not Players.validate_add(request.form):
+        return redirect('/addplayer')
     print(request.form)
     Players.save(request.form)
-    return redirect('info')
+    return redirect('/info')
 
 @app.route('/edit/<int:id>')
 def edit(id):

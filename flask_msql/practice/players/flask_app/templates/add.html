@@ -12,20 +12,65 @@
     <header>Add Player</header>
     <p class="btn"><a href="/">Home</a></p>
     <div class="container">
+        <!-- {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %} -->
         <form action="/add_user" method="POST">
             <label for="first_name">First Name:</label>
+            {% with messages = get_flashed_messages(category_filter = ["first_name"]) %}
+            {% if messages %}
+                {% for message in messages %}
+                <p class="message">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
                 <br>
             <input type="text" name="first_name" class="input">
                 <br><br>
             <label for="last_name">Last Name:</label>
+            {% with messages = get_flashed_messages(category_filter = ["last_name"]) %}
+            {% if messages %}
+                {% for message in messages %}
+                <p class="message">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+
                 <br>
             <input type="text" name="last_name" class="input">
                 <br><br>
             <label for="user_name">User Name:</label>
+            {% with messages = get_flashed_messages(category_filter = ["user_name"]) %}
+            {% if messages %}
+                {% for message in messages %}
+                <p class="message">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
                 <br>
             <input type="text" name="user_name" class="input">
                 <br><br>
             <label for="email">Email:</label class="input">
+                {% with messages = get_flashed_messages(category_filter = ["email"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+
+                {% with messages = get_flashed_messages(category_filter = ["email_invalid"]) %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <p class="message">{{message}}</p>
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
                 <br>
             <input type="text" name="email" class="input">
                 <br><br><br>

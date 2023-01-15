@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Handlee&family=Kaushan+Script&family=Rubik+Puddles&family=Short+Stack&display=swap" rel="stylesheet">
+    <title>Cookie Orders</title>
+</head>
+<body>
+    <div class="border"><h1 class="header1">Cookie Orders</h1></div>
+    
+    <p class="order"><a href="/order">+Order Cookies</a></p>
+    <div class="container">
+        <table cellspacing="0">
+            <thead>
+                <tr>
+                    <td>Customer Name</th>
+                    <td>Cookie Type</td>
+                    <td>Number of Boxes</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cookies in cookies %}
+                <tr>
+                    <td>{{ cookies.customer_name }}</td>
+                    <td>{{ cookies.cookie_type }}</td>
+                    <td>{{ cookies.order_qty }}</td>
+                    <td>
+                        <a href="/edit/{{cookies.id}}">Edit</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+</body>
+</html>
