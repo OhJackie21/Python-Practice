@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Coding Dojo Wall</title>
+</head>
+<body>
+    <header class="head1">
+        <h1>Coding Dojo Wall</h1>
+        <h3>Welcome, Daniel</h3>
+        <h3></h3>
+    </header>
+    <div class="container">
+        <div class="left">
+            <h2>REGISTER</h2>
+            <form action="/register" method="POST">
+                <label for="first_name">First Name:</label><br>
+                    {% with messages = get_flashed_messages(category_filter = ["first_name"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="first_name"> <br><br>
+                <label for="last_name">Last Name: </label><br>
+                    {% with messages = get_flashed_messages(category_filter = ["last_name"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="last_name"> <br><br>
+                <label for="email">Email: </label><br>
+                    {% with messages = get_flashed_messages(category_filter = ["email"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="text" name="email"> <br><br>
+                <label for="password">Password: </label><br>
+                    {% with messages = get_flashed_messages(category_filter = ["password"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="password" name="password"> <br><br>
+                <label for="confirm">Confirm Password: </label><br>
+                    {% with messages = get_flashed_messages(category_filter = ["password2"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <input type="password" name="confirm"> <br><br><br>
+                <input type="submit" value="Register">
+            </form>
+        </div>
+        <div class="right">
+            <h2>Log In</h2>
+            <form action="/login" method="POST">
+                {% with messages = get_flashed_messages(category_filter = ["invalid"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                <label for="email">Email:</label><br>
+                    <input type="text" name="email"><br><br>
+                <label for="password">Password: </label><br>
+                    <input type="password" name="password"> <br><br><br>
+                <input type="submit" value="Log In">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

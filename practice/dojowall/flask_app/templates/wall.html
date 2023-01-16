@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Coding Dojo Wall</title>
+</head>
+<body>
+    <header class="head1">
+        <h1>Coding Dojo Wall</h1>
+        <h3>Welcome, {{ users.first_name }}</h3>
+        <h3><a href="/logout">Log Out</a></h3>
+    </header>
+    <div class="addpost">
+        <form action="">
+            <label for="post"></label>
+        </form>
+    </div>
+    <div class="posts">
+
+    </div>
+</body>
+</html>

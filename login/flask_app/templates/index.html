@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <h1></h1>
+    <div class="container">
+    <div class="left">
+        <h2>Register</h2> <br>
+        <form action="/register" method="POST">
+                    {% with messages = get_flashed_messages(category_filter = ["all_fields"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+            <label for="first_name">First name</label> 
+                    {% with messages = get_flashed_messages(category_filter = ["first_name"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}<br>
+                <input type="text" name="first_name"> <br><br>
+            <label for="last_name">Last Name</label> 
+                    {% with messages = get_flashed_messages(category_filter = ["last_name"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}<br>
+                <input type="text" name="last_name"> <br><br>
+            <label for="email">Email</label> 
+                    {% with messages = get_flashed_messages(category_filter = ["email"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}<br>
+                <input type="text" name="email"><br><br>
+            <label for="password">Password</label><br>
+                <input type="password" name="password"><br><br>
+            <label for="confirm">Confirm Password</label>
+                    {% with messages = get_flashed_messages(category_filter = ["notmatch"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}<br>
+                <input type="password" name="confirm"><br><br><br>
+            
+            <input type="submit" value="SUBMIT" class="submit1">
+
+        </form>
+    </div>
+    <div class="right">
+        <h2>Log-In</h2>
+        <br>
+        <form action="/login" method="POST" >
+            <label for="email">Email:</label>
+            <input type="text" name="email">
+                    {% with messages = get_flashed_messages(category_filter = ["invalid"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                <br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password">
+                <br><br>
+                    {% with messages = get_flashed_messages(category_filter = ["wrongpass"]) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                <br>
+            <input type="submit" value="Log-In" class="submit2">
+            
+        </form>
+    </div>
+    </div>
+</body>
+</html>
