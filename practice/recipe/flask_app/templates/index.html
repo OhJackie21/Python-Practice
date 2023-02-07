@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Fredoka+One&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1 class="headz">Recipe Share</h1>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+    <div class="container">
+        <div class="left">
+            <h2>Register</h2>
+            <form action="/register" method="POST">
+                <table class="regform">
+                    <tr>
+                        <td><label for="first_name">First Name:</label></td>
+                        <td><input type="text" name="first_name" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="last_name">Last Name:</label></td>
+                        <td><input type="text" name="last_name" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" name="email" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" name="password" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="confirm">Confirm Password:</label></td>
+                        <td><input type="password" name="confirm" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Register" class="reg"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="right">
+            <h2>Login</h2>
+            <form action="/login" method="POST">
+                <table class="logform">
+                    <tr>
+                        <td><label for="email">Email:</label></td>
+                        <td><input type="text" name="email" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="password">Password:</label></td>
+                        <td><input type="password" name="password" class="input"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="submit" value="Login" class="log"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

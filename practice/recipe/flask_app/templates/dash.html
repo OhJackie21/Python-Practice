@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Fredoka+One&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1 class="headz">Recipe Share</h1>
+    <div class="top1">
+        <h2>Welcome {{user.first_name}}</h2>
+        <p class="create">
+            <a href="/create" class="cbutt">+ Create</a> &nbsp; &nbsp; &nbsp;
+            <a href="/logout" class="lgbutt">logout</a>
+        </p>
+    </div>
+    
+    <div class="recipes">
+        <p class="post">All Posted Recipes:</p>
+        <table cellspacing="0">
+            <thead class="head2">
+                <td>Name</td>
+                <td>Under 30 mins?</td>
+                <td>Posted By</td>
+                <td>Actions</td>
+            </thead>
+            <tbody class="overflow">
+                {% for recipe in recipe %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    <td>{{recipe.under_30}}</td>
+                    <td>{{recipe.first_name}}</td>
+                    <td>
+                        <a href="/view/{{recipe.id}}">view</a> 
+                        {% if session['user_id'] == recipe.user_id %}
+                        | <a href="/edit_recipe/{{recipe.id}}">edit</a> | 
+                        <a href="/delete_recipe/{{recipe.id}}">delete</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

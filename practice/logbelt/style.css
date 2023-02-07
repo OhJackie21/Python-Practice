@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+
+    background-image: linear-gradient(to bottom right, #FFBF69, #06678D);
+    
+     /* Created with https://www.css-gradient.com
+background: #FFBF69;
+background: -webkit-radial-gradient(top left, #FFBF69, #06678D);
+background: -moz-radial-gradient(top left, #FFBF69, #06678D);
+background: radial-gradient(to bottom right, #FFBF69, #06678D); */
+
+}
+
+
+
+
+
+.left,
+.right{
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.3px);
+    -webkit-backdrop-filter: blur(2.3px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+
+}
+td{
+    padding: 10px;
+}
+
+.container{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    gap: 150px;
+}
+
+.right{
+    height: max-content;
+}

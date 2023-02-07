@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Fredoka+One&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Sasquatch Websighting</title>
+</head>
+<body>
+    <h1 class="headz">Sasquatch Websightings</h1>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+    
+    <div class="top2">
+        <p class="create">
+            <a href="/home" class="cbutt">Home</a> &nbsp; &nbsp; &nbsp;
+            <a href="/logout" class="lgbutt">logout</a>
+        </p>
+    </div>
+        
+    <div class="container3">
+        <h2 class="topz">Report a Sighting</h2>
+        <div class="cont">
+            <div class="left2">
+                <form action="/addsight" method="POST">
+                    <table class="regform">
+                        <tr>
+                            <td><label for="location">Location:</label></td>
+                            <td><input type="text" name="location" class="recname"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="scenario">What Happened?:</label></td>
+                            <td><textarea name="scenario" class="des" cols="30" rows="10"></textarea></td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="right2">
+                    <div class="datecooked">
+                        Date of Sighting <br>
+                        <input type="date" name="date_of_sighting" class="date">
+                    </div>
+                    <div class="under30">
+                        Number of Sasquatches: <br><br>
+                        <input type="number" name="qty_of_sq" class="date">
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Report Sightings" class="submit3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

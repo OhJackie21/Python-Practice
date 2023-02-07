@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: 
+    radial-gradient(rgb(255, 255, 255) 10%, transparent 10%),
+    radial-gradient(rgb(255, 255, 255) 10%, transparent 10%);
+    background-position: 0px 0px, 8px 8px;
+    background-size: 16px 16px;
+    background-color: rgb(218, 253, 186);
+}
+.below{
+    position: absolute;
+    bottom: 0px;
+    background-color: #012030;
+    text-align: center;
+    width: 100%;
+    height: 70px;
+    border-top: 5px dotted #DAFDBA;
+    padding-top: 10px;
+    font-family: 'Pacifico', cursive;
+    color: #DAFDBA;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.below p{
+    padding-top: 10px;
+}
+
+.below a:visited,
+.below a:link,
+.below a:active{
+    text-decoration: none;
+    color: #DAFDBA;
+}
+
+.below a:hover{
+    color: #012030;
+    background-color: #DAFDBA;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+header{
+    text-align: center;
+    background-color: #9AEBA3;
+    height: 100px;
+    border-bottom: 5px dotted black;
+}
+
+header h1{
+    padding: 20px;
+    font-family: 'WindSong', cursive;
+    font-size: 50px;
+}
+
+.container{
+    margin: auto;
+    
+    display: flex;
+    width: max-content;
+    gap: 70px;
+    margin-top: 70px;
+    
+}
+
+.curauthors{
+    margin-top: 20px;
+    font-family: 'Rancho', cursive;
+    padding-bottom: 20px;
+    overflow-y: auto;
+    height: 300px;
+
+}
+
+.left{
+    margin: auto;
+    text-align: center;
+    font-family: 'Satisfy', cursive;
+    background-color: #13678A;
+    padding: 30px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+    vertical-align: top;
+}
+
+.left2{
+    margin: auto;
+    text-align: center;
+    font-family: 'Satisfy', cursive;
+    background-color: #45C4B0;
+    padding: 30px;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    color: white;
+    box-shadow: 5px 5px 5px black;
+    vertical-align: top;
+}
+
+.left h2,
+.right h2{
+    text-decoration: underline;
+    font-family: 'Satisfy', cursive;
+}
+
+.left2 h2,
+.right2 h2{
+    text-decoration: underline;
+    font-family: 'Satisfy', cursive;
+}
+
+.authorname{
+    width: 230px;
+    border-radius: 30px;
+    border: none;
+    padding-left: 20px;
+    padding: 5px;
+    height: 30px;
+}
+
+.submit1{
+    width: 100px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: rgb(95, 177, 244);
+    color: white;
+    font-family: 'Satisfy', cursive;
+    height: 30px;
+}
+
+.submit1:hover{
+    background-color: yellow;
+    box-shadow: 2px 2px 2px black;
+    color: black;
+}
+
+.right{
+    background-color: #45C4B0;
+    height: 400px;
+    padding: 30px;
+    padding-left: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 5px 5px 5px black;
+    width: 300px;
+    text-align: center;
+    color: white;
+}
+
+.right2{
+    background-color: #13678A;
+    height: 400px;
+    padding: 30px;
+    padding-left: 40px;
+    border-top-right-radius: 50px;
+    border-bottom-left-radius: 50px;
+    box-shadow: 5px 5px 5px black;
+    width: 300px;
+    text-align: center;
+    color: #DBF227;
+}
+
+.curauthors li{
+    font-size: 25px;
+    padding: 5px;
+    list-style-type: none;
+}
+
+li a:active,
+li a:link,
+li a:visited{
+    color: #012030;
+    text-decoration: none;
+}
+
+.booklist a:active,
+.booklist a:link,
+.booklist a:visited{
+    color: #eaeff2;
+    text-decoration: none;
+}
+
+.booklist a:hover{
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+    color: #012030;
+    
+}
+
+li a:hover{
+    background-color: white;
+    border-radius: 50px;
+    padding: 5px;
+    color: #012030;
+    
+}
+
+tr:nth-child(even){
+    background-color: aliceblue;
+    color: black;
+}
+
+.theader{
+    background-color: #012030;
+}
+
+th,
+td{
+    padding: 5px;
+
+}
+
+.pages{
+    width: 100px
+}

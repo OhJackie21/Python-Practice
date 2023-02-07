@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Fredoka+One&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1 class="headz">Recipe Share</h1>
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                            <p class="message">{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+    
+    <div class="top2">
+        <p class="create">
+            <a href="/dash" class="cbutt">Home</a> &nbsp; &nbsp; &nbsp;
+            <a href="/logout" class="lgbutt">logout</a>
+        </p>
+    </div>
+        
+    <div class="container3">
+        <h2 class="topz">Add a new Recipe</h2>
+        <div class="cont">
+            <div class="left2">
+                <form action="/addrecipe" method="POST">
+                    <table class="regform">
+                        <tr>
+                            <td><label for="name">Recipe Name:</label></td>
+                            <td><input type="text" name="name" class="recname" value="{{session.name}}"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="description">Description:</label></td>
+                            <td><textarea name="description" class="des" cols="25" rows="3"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="instruction">Instructions:</label></td>
+                            <td><textarea name="instruction" class="ins" cols="30" rows="10"></textarea></td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="right2">
+                    <div class="datecooked">
+                        Date Cooked/Made <br>
+                        <input type="date" name="date_made" class="date">
+                    </div>
+                    <div class="under30">
+                        Under 30 minutes? <br><br>
+                        <input type="radio" name="under_30" value="YES">
+                            <label for="under_30">YES</label>  &nbsp; &nbsp;
+                        <input type="radio" name="under_30" value="NO">
+                            <label for="under_30">NO</label>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Add Recipe" class="submit3">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

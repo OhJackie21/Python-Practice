@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Pacifico&family=Rancho&family=Satisfy&family=WindSong:wght@500&display=swap" rel="stylesheet">
+    <title>Books</title>
+</head>
+<body>
+    <header><h1 class="authors">Books</h1></header>
+    <div class="container">
+        <div class="left2">
+            <h2>Add a New Book</h2>
+            <br>
+            <form action="/addbook" method="POST">
+                <label for="name">Title:</label> &nbsp;
+                <input type="text" name="title" class="authorname">
+                    <br><br>
+                <label for="num_of_pages"># of Pages</label> &nbsp;
+                <input type="number"  name="num_of_pages" class="authorname">
+                    <br><br>
+                <input type="submit" value="Submit" class="submit1">
+            </form>
+        </div>
+        <div class="right2">
+            <h2>Current Books</h2>
+            <div class="curauthors">
+                <ul>
+                    {% for books in books %}
+                        <li class="booklist"><a href="/bkfave/{{books.id}}">"{{ books.title }}"</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="below">
+        <p> <a href="/"> Add an Author</a></p>
+    </div>
+</body>
+</html>

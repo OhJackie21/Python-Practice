@@ -1,42 +1,43 @@
 from flask import render_template, redirect, session, request, flash
 from flask_app import app
 from flask_app.models.user import User
+from flask_app.models.sighting import Sighting
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 
 
 @app.route('/')
-def main():
-    return redirect('/home')
+def index():
+    return redirect('/index')
 
-@app.route('/home')
-def home():
+@app.route('/index')
+def main():
     return render_template('index.html')
 
-@app.route('/register', methods = ['POST'])
+@app.route('/register', methods=['POST'])
 def register():
-    if not User.validate_add(request.form):
+    if not User.user_validate(request.form):
         return redirect('/')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
-    print(pw_hash)
-    data = {
+    data ={
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "email": request.form['email'],
         "password": pw_hash
     }
-    id = User.add(data)
+    id = User.register(data)
     session['user_id'] = id
-    return redirect('/dash')
+    return redirect('/home')
 
-@app.route('/dash')
-def dashboard():
+
+@app.route('/home')
+def dash():
     if 'user_id' not in session:
         return redirect('/logout')
     data = { 'id': session['user_id']}
     user = User.user_info(data)
-    recipe = Recipe.all_recipes(data)
-    return render_template("dashboard.html", user=user, recipe = recipe)
+    sighting = Sighting.all_sightings()
+    return render_template('home.html', user=user, sighting=sighting)
 
 @app.route('/logout')
 def logout():
@@ -48,12 +49,10 @@ def login():
     data = { "email": request.form['email'] }
     user_in_db = User.email(data)
     if not user_in_db:
-        flash("Invalid Email/Password", "invalid")
+        flash("Invalid Email/Password")
         return redirect('/')
     if not bcrypt.check_password_hash(user_in_db.password, request.form['password']):
-        flash("Invalid Email/Password", "wrongpass")
+        flash("Invalid Email/Password")
         return redirect('/')
-    
-    #if passwords match, we set the user_id into session
     session['user_id'] = user_in_db.id
-    return redirect('/dash')
+    return redirect('/home')

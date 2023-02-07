@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Pacifico&family=Rancho&family=Satisfy&family=WindSong:wght@500&display=swap" rel="stylesheet">
+    <title>Books</title>
+</head>
+<body>
+    <header><h1 class="authors">Books</h1></header>
+    <div class="container">
+        <div class="left2">
+            <h2>Add a favorited book</h2>
+            <br>
+            <form action="/faveauthor" method="POST">
+                <label for="author_id">Name:</label> &nbsp;
+                <input type="hidden" name="book_id" value="{{favebooks.id}}">
+                <select name="author_id" class="authorname">
+                     {% for authors2 in notfavea %}
+                     <option value="{{ authors2.id }}">{{ authors2.name }}</option>
+                     {% endfor %}
+                </select>
+                    <br><br>
+                <input type="submit" value="Add" class="submit1">
+            </form>
+        </div>
+        <div class="right2">
+            <h2>"Book Title"</h2>
+            <h3>Favorited by:</h3>
+            <div class="curauthors">
+                <ul>
+                    {% for authors in favebooks.faveauthor %}
+                    <li>{{ authors.name}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="below">
+        <p> <a href="/"> Add an Author</a></p>
+        <p> <a href="/books"> Add a Book</a></p>
+    </div>
+</body>
+</html>

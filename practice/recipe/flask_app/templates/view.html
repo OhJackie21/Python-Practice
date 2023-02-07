@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Alata&family=Fredoka+One&family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Recipe Share</title>
+</head>
+<body>
+    <h1 class="headz">Recipe Share</h1>
+    <div class="top1">
+        <h2>Welcome {{user.first_name}}</h2>
+        <p class="create">
+            <a href="/dash" class="cbutt">Home</a> &nbsp; &nbsp; &nbsp;
+            <a href="/logout" class="lgbutt">logout</a>
+        </p>
+    </div>
+    
+    <div class="recipes1">
+        <h1>{{recipe.name}}</h1>
+        <p>Posted by: {{rec_own.first_name}} {{rec_own.last_name}}</p> <br><br>
+        <p class="uldes">Description:</p>
+        <p>{{recipe.description}}</p>
+            <br><br>
+        <p class="ulin">Instructions:</p>
+        <p>{{recipe.instruction}}</p>
+    </div>
+</body>
+</html>
